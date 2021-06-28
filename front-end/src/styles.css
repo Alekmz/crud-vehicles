@@ -1,0 +1,14 @@
+/* Inports */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+
+label{
+    display: flex;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+button {
+    margin: 0 10px 0 0px;
+}

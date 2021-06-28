@@ -1,0 +1,48 @@
+<div class="container" *ngIf="request">
+    <div class="form-group">
+      <label>Placa</label>
+      <input class="form-control" placeholder="Insira a placa" #placa="ngModel" required minlength="8" required maxlength="8" [(ngModel)]="request.placa"> 
+      <div *ngIf="placa.invalid">
+        <p class="alert alert-danger">O numero da placa deve conter 8 caracteres! Exemplo: "MUT-8664"</p> 
+      </div>
+    </div>
+    <div class="form-group">
+        <label>Chassi</label>
+        <input class="form-control" placeholder="Insira o chassi" #chassi="ngModel" required minlength="17" [(ngModel)]="request.chassi">
+        <div *ngIf="chassi.invalid">
+           <p class="alert alert-danger">O número do chassi deve conter mais de 17 caracteres, somando os espaços!</p> 
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Renavam</label>
+        <input class="form-control" placeholder="Insira o renavam"  #renavam="ngModel" required minlength="11" required maxlength="11" [(ngModel)]="request.renavam">
+        <div *ngIf="renavam.invalid">
+            <p class="alert alert-danger">O código Renavam deve conter 11 digitos!</p> 
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Modelo</label>
+        <input class="form-control" placeholder="Insira o modelo" required minlength="1" #modelo="ngModel" [(ngModel)]="request.modelo">
+        <div *ngIf="modelo.invalid">
+            <p class="alert alert-danger">Preencha esse campo!</p> 
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Marca</label>
+        <input class="form-control" placeholder="Insira a marca" required minlength="1" #marca="ngModel" [(ngModel)]="request.marca">
+        <div *ngIf="marca.invalid">
+            <p class="alert alert-danger">Preencha esse campo!</p> 
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Ano</label>
+        <input class="form-control" placeholder="Insira o ano" required minlength="4" required maxlength="4" #ano="ngModel" [(ngModel)]="request.ano">
+        <div *ngIf="ano.invalid">
+            <p class="alert alert-danger">O ano de modelo do veículo deve conter 4 digitos!</p> 
+        </div>
+    </div>
+    <button type="submit" class="btn btn-danger mt-3" (click)="back()">Voltar</button>
+    <button type="submit" class="btn btn-primary mt-3" 
+        [disabled]="placa.invalid || chassi.invalid || renavam.invalid || modelo.invalid || marca.invalid || ano.invalid"
+        (click)="update()">Atualizar</button>
+</div>

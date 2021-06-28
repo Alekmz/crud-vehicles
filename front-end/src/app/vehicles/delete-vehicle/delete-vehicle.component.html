@@ -1,0 +1,23 @@
+<div class="container" *ngIf="request">
+    <h1>Deletar Veiculo</h1>
+    <div class="form-group">
+        <label>{{request.placa}}</label>
+    </div>
+    <div class="form-group">
+        <label>{{request.chassi}}</label>
+    </div>
+    <div class="form-group">
+        <label>{{request.renavam}}</label>
+    </div>
+    <div class="form-group">
+        <label>{{request.modelo}}</label>
+    </div>
+    <div class="form-group">
+        <label>{{request.marca}}</label>
+    </div>
+    <div class="form-group">
+        <label>{{request.ano}}</label>
+    </div>
+    <button type="submit" class="btn btn-primary mt-3" (click)="back()">Cancelar</button>
+    <button type="submit" class="btn btn-danger mt-3" (click)="delete()">Deletar</button>
+</div>
